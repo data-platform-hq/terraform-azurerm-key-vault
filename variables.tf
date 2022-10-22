@@ -19,14 +19,10 @@ variable "location" {
   description = "Azure location"
 }
 
-variable "tenant_id" {
-  type        = string
-  description = "The Azure Active Directory tenant ID that should be used for authenticating requests to the key vault"
-}
-
 variable "default_access_object_id_list" {
   type        = set(string)
   description = "Set of Default Object ID to allow key vault modification"
+  default     = []
 }
 
 variable "purge_protection_enabled" {
@@ -101,6 +97,12 @@ variable "virtual_networks" {
   type        = list(string)
   description = "A list of resource ids for subnets"
   default     = null
+}
+
+variable "firewall_default_action" {
+  type        = string
+  description = "The default action of allow or deny when no other rules match: [Allow|Deny]"
+  default     = "Deny"
 }
 
 variable "bypass" {
