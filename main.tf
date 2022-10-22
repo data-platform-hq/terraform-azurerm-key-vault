@@ -27,7 +27,7 @@ resource "azurerm_key_vault_access_policy" "this" {
   for_each = var.default_access_object_id_list
 
   key_vault_id = azurerm_key_vault.this.id
-  tenant_id    = var.tenant_id
+  tenant_id    = data.azurerm_client_config.this.tenant_id
   object_id    = each.value
 
   key_permissions = [
