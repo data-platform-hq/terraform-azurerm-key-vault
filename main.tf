@@ -58,16 +58,3 @@ resource "azurerm_key_vault_access_policy" "this" {
     "List"
   ]
 }
-
-resource "azurerm_key_vault_key" "this" {
-  name         = var.tde_key_name
-  key_type     = var.key_type
-  key_size     = var.key_size
-  key_vault_id = azurerm_key_vault.this.id
-  key_opts     = var.key_opts
-
-  depends_on = [
-    azurerm_key_vault.this,
-    azurerm_key_vault_access_policy.this
-  ]
-}

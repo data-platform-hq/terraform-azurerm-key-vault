@@ -27,7 +27,6 @@ No modules.
 |------|------|
 | [azurerm_key_vault.this](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/key_vault) | resource |
 | [azurerm_key_vault_access_policy.main](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/key_vault_access_policy) | resource |
-| [azurerm_key_vault_key.this](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/key_vault_key) | resource |
 
 ## Inputs
 
@@ -38,9 +37,6 @@ No modules.
 | <a name="input_enabled_for_disk_encryption"></a> [enabled\_for\_disk\_encryption](#input\_enabled\_for\_disk\_encryption) | Boolean flag to specify whether Azure Disk Encryption is permitted to retrieve secrets from the vault and unwrap keys | `bool` | `true` | no |
 | <a name="input_env"></a> [env](#input\_env) | Environment name | `string` | n/a | yes |
 | <a name="input_ip_rules"></a> [ip\_rules](#input\_ip\_rules) | Map of IP addresses permitted to access storage account | `map(string)` | `null` | no |
-| <a name="input_key_opts"></a> [key\_opts](#input\_key\_opts) | JSON web key operations: [decrypt\|encrypt\|sign\|unwrapKey\|verify\|wrapKey] | `list(string)` | <pre>[<br>  "decrypt",<br>  "encrypt",<br>  "sign",<br>  "unwrapKey",<br>  "verify",<br>  "wrapKey"<br>]</pre> | no |
-| <a name="input_key_size"></a> [key\_size](#input\_key\_size) | Size of the RSA key to create in bytes, requied for RSA & RSA-HSM: [1024\|2048] | `number` | `2048` | no |
-| <a name="input_key_type"></a> [key\_type](#input\_key\_type) | Key Type to use for this Key Vault Key: [EC\|EC-HSM\|Oct\|RSA\|RSA-HSM] | `string` | `"RSA"` | no |
 | <a name="input_location"></a> [location](#input\_location) | Azure location | `string` | n/a | yes |
 | <a name="input_project"></a> [project](#input\_project) | Project name | `string` | n/a | yes |
 | <a name="input_purge_protection_enabled"></a> [purge\_protection\_enabled](#input\_purge\_protection\_enabled) | Enable purge Protection for this Key Vault | `bool` | `false` | no |
@@ -48,7 +44,6 @@ No modules.
 | <a name="input_sku_name"></a> [sku\_name](#input\_sku\_name) | The Name of the SKU used for this Key Vault: [standard, premium] | `string` | `"standard"` | no |
 | <a name="input_soft_delete_retention_days"></a> [soft\_delete\_retention\_days](#input\_soft\_delete\_retention\_days) | The number of days that items should be retained for once soft-deleted | `number` | `7` | no |
 | <a name="input_tags"></a> [tags](#input\_tags) | mapping of tags to assign to the resource | `map(any)` | `{}` | no |
-| <a name="input_tde_key_name"></a> [tde\_key\_name](#input\_tde\_key\_name) | Name of TDE key for SQL Server | `string` | `"tde-sql-key"` | no |
 | <a name="input_tenant_id"></a> [tenant\_id](#input\_tenant\_id) | The Azure Active Directory tenant ID that should be used for authenticating requests to the key vault | `string` | n/a | yes |
 | <a name="input_virtual_networks"></a> [virtual\_networks](#input\_virtual\_networks) | A list of resource ids for subnets | `list(string)` | `null` | no |
 
@@ -58,7 +53,7 @@ No modules.
 |------|-------------|
 | <a name="output_id"></a> [id](#output\_id) | Key Vault ID |
 | <a name="output_name"></a> [name](#output\_name) | Key Vault name |
-| <a name="output_tde_key_id"></a> [tde\_key\_id](#output\_tde\_key\_id) | Encryption Key ID |
+| <a name="output_name_to_id_map"></a> [name\_to\_id\_map](#output\_name\_to\_id\_map) | Map of key vault name to Id |
 | <a name="output_uri"></a> [uri](#output\_uri) | Key Vault URI |
 <!-- END_TF_DOCS -->
 
