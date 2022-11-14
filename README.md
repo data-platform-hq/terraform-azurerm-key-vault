@@ -44,7 +44,6 @@ No modules.
 | <a name="input_sku_name"></a> [sku\_name](#input\_sku\_name) | The Name of the SKU used for this Key Vault: [standard, premium] | `string` | `"standard"` | no |
 | <a name="input_soft_delete_retention_days"></a> [soft\_delete\_retention\_days](#input\_soft\_delete\_retention\_days) | The number of days that items should be retained for once soft-deleted | `number` | `7` | no |
 | <a name="input_tags"></a> [tags](#input\_tags) | mapping of tags to assign to the resource | `map(any)` | `{}` | no |
-| <a name="input_tde_key_name"></a> [tde\_key\_name](#input\_tde\_key\_name) | Name of TDE key for SQL Server | `string` | `"tde-sql-key"` | no |
 | <a name="input_tenant_id"></a> [tenant\_id](#input\_tenant\_id) | The Azure Active Directory tenant ID that should be used for authenticating requests to the key vault | `string` | n/a | yes |
 | <a name="input_virtual_networks"></a> [virtual\_networks](#input\_virtual\_networks) | A list of resource ids for subnets | `list(string)` | `null` | no |
 
