@@ -38,37 +38,6 @@ variable "sku_name" {
   default     = "standard"
 }
 
-variable "tde_key_name" {
-  type        = string
-  description = "Name of TDE key for SQL Server"
-  default     = "tde-sql-key"
-}
-
-variable "key_type" {
-  type        = string
-  description = "Key Type to use for this Key Vault Key: [EC|EC-HSM|Oct|RSA|RSA-HSM]"
-  default     = "RSA"
-}
-
-variable "key_size" {
-  type        = number
-  description = "Size of the RSA key to create in bytes, requied for RSA & RSA-HSM: [1024|2048]"
-  default     = 2048
-}
-
-variable "key_opts" {
-  type        = list(string)
-  description = "JSON web key operations: [decrypt|encrypt|sign|unwrapKey|verify|wrapKey]"
-  default = [
-    "decrypt",
-    "encrypt",
-    "sign",
-    "unwrapKey",
-    "verify",
-    "wrapKey"
-  ]
-}
-
 variable "enabled_for_disk_encryption" {
   type        = bool
   description = "Boolean flag to specify whether Azure Disk Encryption is permitted to retrieve secrets from the vault and unwrap keys"

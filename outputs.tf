@@ -13,7 +13,7 @@ output "name" {
   description = "Key Vault name"
 }
 
-output "tde_key_id" {
-  value       = azurerm_key_vault_key.this.id
-  description = "Encryption Key ID"
+output "name_to_id_map" {
+  value       = { (azurerm_key_vault.this.name) = azurerm_key_vault.this.id}
+  description = "Map of Virtual Network Name to Id"
 }
