@@ -54,7 +54,7 @@ No modules.
 |------|-------------|
 | <a name="output_id"></a> [id](#output\_id) | Key Vault ID |
 | <a name="output_name"></a> [name](#output\_name) | Key Vault name |
-| <a name="output_tde_key_id"></a> [tde\_key\_id](#output\_name\_to\_id\_map) | Map of key vault name to Id |
+| <a name="output_name_to_id_map"></a> [tde\_key\_id](#output\_name\_to\_id\_map) | Map of key vault name to Id |
 | <a name="output_uri"></a> [uri](#output\_uri) | Key Vault URI |
 <!-- END_TF_DOCS -->
 
