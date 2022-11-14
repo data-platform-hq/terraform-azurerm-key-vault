@@ -1,3 +1,15 @@
+## [1.0.2](https://github.com/data-platform-hq/terraform-azurerm-key-vault/compare/v1.0.1...v1.0.2) (2022-11-14)
+
+
+### Bug Fixes
+
+* changed description output variable ([16f8c5f](https://github.com/data-platform-hq/terraform-azurerm-key-vault/commit/16f8c5fd6279493d4aa9b4e95b40524eb9f56421))
+* changed description variable ([505e982](https://github.com/data-platform-hq/terraform-azurerm-key-vault/commit/505e982193e74409ef81cef67d1a8c488a4a28e5))
+* delete description ([9d4186d](https://github.com/data-platform-hq/terraform-azurerm-key-vault/commit/9d4186db695978d7e884f6816ccb7b07ddce2ee5))
+* delete descripton variable tde_key_name ([c854792](https://github.com/data-platform-hq/terraform-azurerm-key-vault/commit/c854792526d54cfd343e41e61bb355c69bb22bcf))
+* delete key_vault ([13660f7](https://github.com/data-platform-hq/terraform-azurerm-key-vault/commit/13660f70fe5eff3b42a314bf74f5623f21fc8606))
+* lint ([d69970d](https://github.com/data-platform-hq/terraform-azurerm-key-vault/commit/d69970df6e18c42d7cfc40e8f8070dc51eea56ac))
+
 ## [1.0.1](https://github.com/data-platform-hq/terraform-azurerm-key-vault/compare/v1.0.0...v1.0.1) (2022-10-22)
 
 
