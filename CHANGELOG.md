@@ -1,3 +1,15 @@
+# [1.1.0](https://github.com/data-platform-hq/terraform-azurerm-key-vault/compare/v1.0.2...v1.1.0) (2023-01-27)
+
+
+### Bug Fixes
+
+* updated provider version ([bfdc2f6](https://github.com/data-platform-hq/terraform-azurerm-key-vault/commit/bfdc2f64dafff27d538ba69c47235f0af95d970b))
+
+
+### Features
+
+* added opportunity to enable Diagnostic setting ([5822863](https://github.com/data-platform-hq/terraform-azurerm-key-vault/commit/58228639c1910925dca8a4d6a68bf0ddbfb1241a))
+
 ## [1.0.2](https://github.com/data-platform-hq/terraform-azurerm-key-vault/compare/v1.0.1...v1.0.2) (2022-11-14)
 
 
