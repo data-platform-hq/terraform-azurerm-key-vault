@@ -1,11 +1,13 @@
 locals {
-  ip_rules = var.ip_rules == null ? null : flatten([for k, v in values(var.ip_rules) : v])
+  ip_rules         = var.ip_rules == null ? null : flatten([for k, v in values(var.ip_rules) : v])
+  key_vault_name   = substr(var.custom_key_vault_name == null ? "${var.project}-${var.env}-${var.location}" : var.custom_key_vault_name, 0, 24)
+  diagnostics_name = var.custom_diagnostic_settings_name == null ? "${var.project}-${var.env}-${var.location}" : var.custom_diagnostic_settings_name
 }
 
 data "azurerm_client_config" "this" {}
 
 resource "azurerm_key_vault" "this" {
-  name                        = "${var.project}-${var.env}-${var.location}"
+  name                        = local.key_vault_name
   location                    = var.location
   resource_group_name         = var.resource_group
   enabled_for_disk_encryption = var.enabled_for_disk_encryption
@@ -65,8 +67,9 @@ data "azurerm_monitor_diagnostic_categories" "this" {
 }
 
 resource "azurerm_monitor_diagnostic_setting" "this" {
-  count                          = var.enable_diagnostic_setting ? 1 : 0
-  name                           = "${var.project}-${var.env}-${var.location}"
+  count = var.enable_diagnostic_setting ? 1 : 0
+
+  name                           = local.diagnostics_name
   target_resource_id             = azurerm_key_vault.this.id
   log_analytics_workspace_id     = var.analytics_workspace_id
   log_analytics_destination_type = var.analytics_destination_type
