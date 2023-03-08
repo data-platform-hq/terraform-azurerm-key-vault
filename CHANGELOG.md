@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/data-platform-hq/terraform-azurerm-key-vault/compare/v1.1.0...v1.2.0) (2023-03-08)
+
+
+### Features
+
+* added custom names for resources ([74093c7](https://github.com/data-platform-hq/terraform-azurerm-key-vault/commit/74093c7185e6ad972eeb10bebd9acfcebb6b7a91))
+
 # [1.1.0](https://github.com/data-platform-hq/terraform-azurerm-key-vault/compare/v1.0.2...v1.1.0) (2023-01-27)
 
 
