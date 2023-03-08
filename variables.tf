@@ -32,6 +32,18 @@ variable "purge_protection_enabled" {
 }
 
 # Optional
+variable "custom_key_vault_name" {
+  type        = string
+  description = "The name to provide for your Key Vault. The name must be globally unique"
+  default     = null
+}
+
+variable "custom_diagnostic_settings_name" {
+  type        = string
+  description = "Specifies the name of the Diagnostic Setting"
+  default     = null
+}
+
 variable "sku_name" {
   type        = string
   description = "The Name of the SKU used for this Key Vault: [standard, premium]"
