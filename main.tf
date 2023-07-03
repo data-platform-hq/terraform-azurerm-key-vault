@@ -32,33 +32,12 @@ resource "azurerm_key_vault_access_policy" "this" {
   tenant_id    = data.azurerm_client_config.this.tenant_id
   object_id    = each.value
 
-  key_permissions = [
-    "Create",
-    "Backup",
-    "Delete",
-    "Get",
-    "List",
-    "Purge",
-    "Recover",
-    "Restore",
-    "Import"
-  ]
+  key_permissions = var.keyvault_key_permissions
 
-  secret_permissions = [
-    "Backup",
-    "Delete",
-    "Get",
-    "List",
-    "Purge",
-    "Recover",
-    "Restore",
-    "Set"
-  ]
+  secret_permissions = var.keyvault_secret_permissions
 
-  storage_permissions = [
-    "Get",
-    "List"
-  ]
+  storage_permissions = var.keyvault_storage_permissions
+
 }
 
 data "azurerm_monitor_diagnostic_categories" "this" {

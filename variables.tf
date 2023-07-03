@@ -109,3 +109,45 @@ variable "enable_diagnostic_setting" {
   description = "Enable diagnostic setting. var.analytics_workspace_id must be provided"
   default     = false
 }
+
+variable "keyvault_key_permissions" {
+  type        = list(string)
+  description = "List of KeyVault keys permissions"
+  default = [
+    "Create",
+    "Backup",
+    "Delete",
+    "Get",
+    "List",
+    "Purge",
+    "Recover",
+    "Restore",
+    "Import",
+    "GetRotationPolicy",
+    "SetRotationPolicy"
+  ]
+}
+
+variable "keyvault_secret_permissions" {
+  type        = list(string)
+  description = "List of KeyVault secrets permissions"
+  default = [
+    "Backup",
+    "Delete",
+    "Get",
+    "List",
+    "Purge",
+    "Recover",
+    "Restore",
+    "Set"
+  ]
+}
+
+variable "keyvault_storage_permissions" {
+  type        = list(string)
+  description = "List of KeyVault storage permissions"
+  default = [
+    "Get",
+    "List"
+  ]
+}
