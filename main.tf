@@ -32,11 +32,11 @@ resource "azurerm_key_vault_access_policy" "this" {
   tenant_id    = data.azurerm_client_config.this.tenant_id
   object_id    = each.value
 
-  key_permissions = var.keyvault_key_permissions
+  key_permissions = var.key_permissions
 
-  secret_permissions = var.keyvault_secret_permissions
+  secret_permissions = var.secret_permissions
 
-  storage_permissions = var.keyvault_storage_permissions
+  storage_permissions = var.storage_permissions
 
 }
 

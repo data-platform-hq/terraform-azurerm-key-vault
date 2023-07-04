@@ -110,7 +110,7 @@ variable "enable_diagnostic_setting" {
   default     = false
 }
 
-variable "keyvault_key_permissions" {
+variable "key_permissions" {
   type        = list(string)
   description = "List of KeyVault keys permissions"
   default = [
@@ -128,7 +128,7 @@ variable "keyvault_key_permissions" {
   ]
 }
 
-variable "keyvault_secret_permissions" {
+variable "secret_permissions" {
   type        = list(string)
   description = "List of KeyVault secrets permissions"
   default = [
@@ -143,7 +143,7 @@ variable "keyvault_secret_permissions" {
   ]
 }
 
-variable "keyvault_storage_permissions" {
+variable "storage_permissions" {
   type        = list(string)
   description = "List of KeyVault storage permissions"
   default = [
