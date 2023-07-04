@@ -1,3 +1,12 @@
+## [1.2.1](https://github.com/data-platform-hq/terraform-azurerm-key-vault/compare/v1.2.0...v1.2.1) (2023-07-04)
+
+
+### Bug Fixes
+
+* removed name to id map from outputs ([f4421c3](https://github.com/data-platform-hq/terraform-azurerm-key-vault/commit/f4421c3d7d506adb7bde45225721c8ceaad9cda1))
+* renamed permission variables; ([2ee78fc](https://github.com/data-platform-hq/terraform-azurerm-key-vault/commit/2ee78fc344227068031840b6a6ee7ce22211606e))
+* updated keyvault policies as variables ([f927a4b](https://github.com/data-platform-hq/terraform-azurerm-key-vault/commit/f927a4bfa4e312592ee50c13e395770f58c0fadf))
+
 # [1.2.0](https://github.com/data-platform-hq/terraform-azurerm-key-vault/compare/v1.1.0...v1.2.0) (2023-03-08)
 
 
