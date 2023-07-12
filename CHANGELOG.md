@@ -1,3 +1,10 @@
+## [1.2.2](https://github.com/data-platform-hq/terraform-azurerm-key-vault/compare/v1.2.1...v1.2.2) (2023-07-12)
+
+
+### Bug Fixes
+
+* added key permission "update" ([270ea67](https://github.com/data-platform-hq/terraform-azurerm-key-vault/commit/270ea679793c9200d12c2c0a835858efbe8ea3cc))
+
 ## [1.2.1](https://github.com/data-platform-hq/terraform-azurerm-key-vault/compare/v1.2.0...v1.2.1) (2023-07-04)
 
 
