@@ -115,6 +115,7 @@ variable "key_permissions" {
   description = "List of KeyVault keys permissions"
   default = [
     "Create",
+    "Update",
     "Backup",
     "Delete",
     "Get",
