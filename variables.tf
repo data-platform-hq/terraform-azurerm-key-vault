@@ -117,6 +117,7 @@ variable "key_permissions" {
     "Create",
     "Update",
     "Backup",
+    "Update",
     "Delete",
     "Get",
     "List",
