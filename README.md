@@ -9,13 +9,13 @@ Terraform module for creation Azure Key Vault
 | Name                                                                      | Version   |
 |---------------------------------------------------------------------------|-----------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.0.0  |
-| <a name="requirement_azurerm"></a> [azurerm](#requirement\_azurerm)       | >= 3.46.0 |
+| <a name="requirement_azurerm"></a> [azurerm](#requirement\_azurerm)       | >= 3.69.0 |
 
 ## Providers
 
 | Name                                                          | Version |
 |---------------------------------------------------------------|---------|
-| <a name="provider_azurerm"></a> [azurerm](#provider\_azurerm) | 3.46.0  |
+| <a name="provider_azurerm"></a> [azurerm](#provider\_azurerm) | 3.69.0  |
 
 ## Modules
 
@@ -54,7 +54,7 @@ No modules.
 | <a name="input_enable_diagnostic_setting"></a> [enable\_diagnostic\_setting](#input\_enable\_diagnostic\_setting)                     | Enable diagnostic setting. var.analytics_workspace_id must be provided                                                | `bool`         | `false`                                                                                                                                                                                       |    no    |
 | <a name="input_key_permissions"></a> [key\_permissions](#input\_key\_permissions)                                                     | List of KeyVault keys permissions                                                                                     | `list(string)` | <pre>[ <br> "Create",<br> "Backup",<br> "Update",<br> "Delete",<br> "Get",<br> "List",<br> "Purge",<br> "Recover",<br> "Restore",<br> "Import",<br> "GetRotationPolicy",<br> "SetRotationPolicy"<br>]</pre> |   yes    |
 | <a name="input_secret_permissions"></a> [secret\_permissions](#input\_secret\_permissions)                                            | List of KeyVault secrets permissions                                                                                  | `list(string)` | <pre>[ <br> "Backup",<br> "Delete",<br> "Get",<br> "List",<br> "Purge",<br> "Recover",<br> "Restore",<br> "Set"<br>]</pre>                                                                    |    no    |
-| <a name="input_storage_permissions"></a> [storage\_permissions](#input\_storage\_permissions)                                         | List of KeyVault storage permissions                                                                                  | `list(string)` | <pre>[ <br> "Get",<br> "List"<br>]</pre>                                                                                                                                                      |    no    |
+| <a name="input_storage_permissions"></a> [storage\_permissions](#input\_storage\_permissions)                                         | List of KeyVault storage permissions                                                                                  | `list(string)` | <pre>[ <br> "Get",<br> "List",<br> "Set",<br> "SetSAS",<br> "GetSAS",<br> "DeleteSAS",<br> "Update",<br> "RegenerateKey",<br> "Backup",<br> "Delete",<br> "Purge",<br> "Recover"<br>]</pre>                                                                                                                                                      |    no    |
 
 ## Outputs
 

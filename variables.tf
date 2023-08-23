@@ -150,6 +150,16 @@ variable "storage_permissions" {
   description = "List of KeyVault storage permissions"
   default = [
     "Get",
-    "List"
+    "List",
+    "Set",
+    "SetSAS",
+    "GetSAS",
+    "DeleteSAS",
+    "Update",
+    "RegenerateKey",
+    "Backup",
+    "Delete",
+    "Purge",
+    "Recover",
   ]
 }
