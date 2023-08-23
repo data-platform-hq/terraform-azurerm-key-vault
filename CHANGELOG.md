@@ -1,3 +1,16 @@
+# [1.3.0](https://github.com/data-platform-hq/terraform-azurerm-key-vault/compare/v1.2.3...v1.3.0) (2023-08-23)
+
+
+### Bug Fixes
+
+* added storage permissions ([3967170](https://github.com/data-platform-hq/terraform-azurerm-key-vault/commit/39671704b921ad0dc10ecfc3b6a50e6b3906d0e9))
+* fmt ([d3516c3](https://github.com/data-platform-hq/terraform-azurerm-key-vault/commit/d3516c30b6027aa157983851a8ba567d8226bcdb))
+
+
+### Features
+
+* updated azurerm version ([8d9f030](https://github.com/data-platform-hq/terraform-azurerm-key-vault/commit/8d9f0306ad17839bbaa937faba3cf01336ba4eaf))
+
 ## [1.2.3](https://github.com/data-platform-hq/terraform-azurerm-key-vault/compare/v1.2.2...v1.2.3) (2023-07-20)
 
 
