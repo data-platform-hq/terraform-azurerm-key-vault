@@ -1,13 +1,11 @@
 locals {
-  ip_rules         = var.ip_rules == null ? null : flatten([for k, v in values(var.ip_rules) : v])
-  key_vault_name   = substr(var.custom_key_vault_name == null ? "${var.project}-${var.env}-${var.location}" : var.custom_key_vault_name, 0, 24)
-  diagnostics_name = var.custom_diagnostic_settings_name == null ? "${var.project}-${var.env}-${var.location}" : var.custom_diagnostic_settings_name
+  ip_rules = var.ip_rules == null ? null : flatten([for k, v in values(var.ip_rules) : v])
 }
 
 data "azurerm_client_config" "this" {}
 
 resource "azurerm_key_vault" "this" {
-  name                        = local.key_vault_name
+  name                        = var.key_vault_name
   location                    = var.location
   resource_group_name         = var.resource_group
   enabled_for_disk_encryption = var.enabled_for_disk_encryption
@@ -17,6 +15,8 @@ resource "azurerm_key_vault" "this" {
   tags                        = var.tags
   sku_name                    = var.sku_name
 
+  enable_rbac_authorization = var.rbac_authorization_enabled
+
   network_acls {
     default_action             = var.firewall_default_action
     bypass                     = var.bypass
@@ -25,8 +25,16 @@ resource "azurerm_key_vault" "this" {
   }
 }
 
+resource "azurerm_role_assignment" "this" {
+  for_each = var.rbac_authorization_enabled ? var.default_access_object_id_list : toset([])
+
+  scope                = azurerm_key_vault.this.id
+  role_definition_name = "Key Vault Administrator"
+  principal_id         = each.value
+}
+
 resource "azurerm_key_vault_access_policy" "this" {
-  for_each = var.default_access_object_id_list
+  for_each = var.rbac_authorization_enabled ? toset([]) : var.default_access_object_id_list
 
   key_vault_id = azurerm_key_vault.this.id
   tenant_id    = data.azurerm_client_config.this.tenant_id
@@ -45,7 +53,7 @@ data "azurerm_monitor_diagnostic_categories" "this" {
 resource "azurerm_monitor_diagnostic_setting" "this" {
   count = var.enable_diagnostic_setting ? 1 : 0
 
-  name                           = local.diagnostics_name
+  name                           = coalesce(var.diagnostics_settings_name, "ds-${var.key_vault_name}")
   target_resource_id             = azurerm_key_vault.this.id
   log_analytics_workspace_id     = var.analytics_workspace_id
   log_analytics_destination_type = var.analytics_destination_type
