@@ -1,4 +1,3 @@
-# Required
 variable "key_vault_name" {
   type        = string
   description = "Key vault name"
@@ -32,7 +31,6 @@ variable "purge_protection_enabled" {
   default     = false
 }
 
-# Optional
 variable "sku_name" {
   type        = string
   description = "The Name of the SKU used for this Key Vault: [standard, premium]"
@@ -156,4 +154,5 @@ variable "storage_permissions" {
 variable "rbac_authorization_enabled" {
   type        = bool
   description = "RBAC authorization switch"
+  default     = false
 }
