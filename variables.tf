@@ -1,12 +1,12 @@
-# Required
-variable "project" {
+variable "key_vault_name" {
   type        = string
-  description = "Project name"
+  description = "Key vault name"
 }
 
-variable "env" {
+variable "diagnostics_settings_name" {
   type        = string
-  description = "Environment name"
+  description = "Diagnostics settings name"
+  default     = null
 }
 
 variable "resource_group" {
@@ -29,19 +29,6 @@ variable "purge_protection_enabled" {
   type        = bool
   description = "Enable purge Protection for this Key Vault"
   default     = false
-}
-
-# Optional
-variable "custom_key_vault_name" {
-  type        = string
-  description = "The name to provide for your Key Vault. The name must be globally unique"
-  default     = null
-}
-
-variable "custom_diagnostic_settings_name" {
-  type        = string
-  description = "Specifies the name of the Diagnostic Setting"
-  default     = null
 }
 
 variable "sku_name" {
@@ -162,4 +149,10 @@ variable "storage_permissions" {
     "Purge",
     "Recover",
   ]
+}
+
+variable "rbac_authorization_enabled" {
+  type        = bool
+  description = "RBAC authorization switch"
+  default     = false
 }
