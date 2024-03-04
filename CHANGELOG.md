@@ -1,3 +1,16 @@
+# [1.4.0](https://github.com/data-platform-hq/terraform-azurerm-key-vault/compare/v1.3.0...v1.4.0) (2024-03-04)
+
+
+### Bug Fixes
+
+* replaced pre-commit repo docs creation/update by GH Actions ([7478c37](https://github.com/data-platform-hq/terraform-azurerm-key-vault/commit/7478c37f933714ceb78312135de890dc4d4997f1))
+* updated variable ([32d34a4](https://github.com/data-platform-hq/terraform-azurerm-key-vault/commit/32d34a4a956159478ef0ee9c486a6b7ba7aae9c1))
+
+
+### Features
+
+* update key vault module ([8d8195f](https://github.com/data-platform-hq/terraform-azurerm-key-vault/commit/8d8195f6193b7e254304a345a09eb42ab6be53d9))
+
 # [1.3.0](https://github.com/data-platform-hq/terraform-azurerm-key-vault/compare/v1.2.3...v1.3.0) (2023-08-23)
 
 
