@@ -25,6 +25,22 @@ variable "default_access_object_id_list" {
   default     = []
 }
 
+variable "rbac_authorization_enabled" {
+  type        = bool
+  description = "RBAC authorization switch"
+  default     = false
+}
+
+variable "rbac_users" {
+  type = list(object({
+    username             = string
+    object_id            = string
+    role_definition_name = string
+  }))
+  description = "List of objects to configure Key Vault users using RBAC Roles"
+  default     = []
+}
+
 variable "purge_protection_enabled" {
   type        = bool
   description = "Enable purge Protection for this Key Vault"
@@ -149,10 +165,4 @@ variable "storage_permissions" {
     "Purge",
     "Recover",
   ]
-}
-
-variable "rbac_authorization_enabled" {
-  type        = bool
-  description = "RBAC authorization switch"
-  default     = false
 }
