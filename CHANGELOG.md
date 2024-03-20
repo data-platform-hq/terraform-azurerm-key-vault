@@ -1,3 +1,15 @@
+# [1.5.0](https://github.com/data-platform-hq/terraform-azurerm-key-vault/compare/v1.4.0...v1.5.0) (2024-03-20)
+
+
+### Bug Fixes
+
+* added security KICS scan action ([5c85762](https://github.com/data-platform-hq/terraform-azurerm-key-vault/commit/5c85762d2c6315d9cb2002869f54cadc7b416092))
+
+
+### Features
+
+* support rbac in key vault ([ba9340b](https://github.com/data-platform-hq/terraform-azurerm-key-vault/commit/ba9340b4671cda0489a8fb6a9a1ea04ffad92823))
+
 # [1.4.0](https://github.com/data-platform-hq/terraform-azurerm-key-vault/compare/v1.3.0...v1.4.0) (2024-03-04)
 
 
