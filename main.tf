@@ -1,5 +1,7 @@
 locals {
   ip_rules = var.ip_rules == null ? null : flatten([for k, v in values(var.ip_rules) : v])
+
+  rbac_users_mapped = { for object in var.rbac_users : "${object.username}:${object.role_definition_name}" => object }
 }
 
 data "azurerm_client_config" "this" {}
@@ -25,12 +27,20 @@ resource "azurerm_key_vault" "this" {
   }
 }
 
-resource "azurerm_role_assignment" "this" {
+resource "azurerm_role_assignment" "admins" {
   for_each = var.rbac_authorization_enabled ? var.default_access_object_id_list : toset([])
 
   scope                = azurerm_key_vault.this.id
   role_definition_name = "Key Vault Administrator"
   principal_id         = each.value
+}
+
+resource "azurerm_role_assignment" "users" {
+  for_each = var.rbac_authorization_enabled ? local.rbac_users_mapped : {}
+
+  scope                = azurerm_key_vault.this.id
+  role_definition_name = each.value.role_definition_name
+  principal_id         = each.value.object_id
 }
 
 resource "azurerm_key_vault_access_policy" "this" {
