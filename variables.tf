@@ -166,3 +166,13 @@ variable "storage_permissions" {
     "Recover",
   ]
 }
+
+variable "key_vault_policy_config" {
+  description = "List of object with parameters to create Key Vault Access Policy"
+  type = list(object({
+    object_id          = string
+    key_permissions    = optional(list(string))
+    secret_permissions = optional(list(string))
+  }))
+  default = []
+}
