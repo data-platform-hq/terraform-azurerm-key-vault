@@ -1,3 +1,10 @@
+## [1.5.1](https://github.com/data-platform-hq/terraform-azurerm-key-vault/compare/v1.5.0...v1.5.1) (2024-04-05)
+
+
+### Bug Fixes
+
+* added key vault policy ([ab43f2d](https://github.com/data-platform-hq/terraform-azurerm-key-vault/commit/ab43f2d9667218e43cfef0847f9899d4890a37d8))
+
 # [1.5.0](https://github.com/data-platform-hq/terraform-azurerm-key-vault/compare/v1.4.0...v1.5.0) (2024-03-20)
 
 
