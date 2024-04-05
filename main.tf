@@ -85,3 +85,13 @@ resource "azurerm_monitor_diagnostic_setting" "this" {
     ignore_changes = [log_analytics_destination_type] # TODO remove when issue is fixed: https://github.com/Azure/azure-rest-api-specs/issues/9281
   }
 }
+
+resource "azurerm_key_vault_access_policy" "assigned_identity" {
+  for_each = { for i in var.key_vault_policy_config : i.object_id => i if i.object_id != null }
+
+  key_vault_id       = azurerm_key_vault.this.id
+  tenant_id          = data.azurerm_client_config.this.tenant_id
+  object_id          = each.value.object_id
+  key_permissions    = each.value.key_permissions
+  secret_permissions = each.value.secret_permissions
+}
