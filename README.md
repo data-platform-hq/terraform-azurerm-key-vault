@@ -26,6 +26,7 @@ No modules.
 | Name | Type |
 |------|------|
 | [azurerm_key_vault.this](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/key_vault) | resource |
+| [azurerm_key_vault_access_policy.assigned_identity](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/key_vault_access_policy) | resource |
 | [azurerm_key_vault_access_policy.this](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/key_vault_access_policy) | resource |
 | [azurerm_monitor_diagnostic_setting.this](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/monitor_diagnostic_setting) | resource |
 | [azurerm_role_assignment.admins](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/role_assignment) | resource |
@@ -48,6 +49,7 @@ No modules.
 | <a name="input_ip_rules"></a> [ip\_rules](#input\_ip\_rules) | Map of IP addresses permitted to access storage account | `map(string)` | `null` | no |
 | <a name="input_key_permissions"></a> [key\_permissions](#input\_key\_permissions) | List of KeyVault keys permissions | `list(string)` | <pre>[<br>  "Create",<br>  "Update",<br>  "Backup",<br>  "Update",<br>  "Delete",<br>  "Get",<br>  "List",<br>  "Purge",<br>  "Recover",<br>  "Restore",<br>  "Import",<br>  "GetRotationPolicy",<br>  "SetRotationPolicy"<br>]</pre> | no |
 | <a name="input_key_vault_name"></a> [key\_vault\_name](#input\_key\_vault\_name) | Key vault name | `string` | n/a | yes |
+| <a name="input_key_vault_policy_config"></a> [key\_vault\_policy\_config](#input\_key\_vault\_policy\_config) | List of object with parameters to create Key Vault Access Policy | <pre>list(object({<br>    object_id          = string<br>    key_permissions    = optional(list(string))<br>    secret_permissions = optional(list(string))<br>  }))</pre> | `[]` | no |
 | <a name="input_location"></a> [location](#input\_location) | Azure location | `string` | n/a | yes |
 | <a name="input_purge_protection_enabled"></a> [purge\_protection\_enabled](#input\_purge\_protection\_enabled) | Enable purge Protection for this Key Vault | `bool` | `false` | no |
 | <a name="input_rbac_authorization_enabled"></a> [rbac\_authorization\_enabled](#input\_rbac\_authorization\_enabled) | RBAC authorization switch | `bool` | `false` | no |
