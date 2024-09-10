@@ -1,3 +1,10 @@
+# [1.6.0](https://github.com/data-platform-hq/terraform-azurerm-key-vault/compare/v1.5.1...v1.6.0) (2024-09-10)
+
+
+### Features
+
+* upgrade to AzureRM v4 ([8c6644b](https://github.com/data-platform-hq/terraform-azurerm-key-vault/commit/8c6644b8161d37e133b19a19c7edc3720cc413a5))
+
 ## [1.5.1](https://github.com/data-platform-hq/terraform-azurerm-key-vault/compare/v1.5.0...v1.5.1) (2024-04-05)
 
 
