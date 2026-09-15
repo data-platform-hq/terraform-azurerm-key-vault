@@ -87,7 +87,7 @@ resource "azurerm_monitor_diagnostic_setting" "this" {
 }
 
 resource "azurerm_key_vault_access_policy" "assigned_identity" {
-  for_each = { for i in var.key_vault_policy_config : try(i.object_id, null) => i if try(i.object_id, null) != null }
+  for_each = { for i in [for x in var.key_vault_policy_config : x if x != null] : i.object_id => i if i.object_id != null }
 
   key_vault_id       = azurerm_key_vault.this.id
   tenant_id          = data.azurerm_client_config.this.tenant_id
