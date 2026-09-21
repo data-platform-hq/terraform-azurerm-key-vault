@@ -1,3 +1,10 @@
+## [1.7.1](https://github.com/data-platform-hq/terraform-azurerm-key-vault/compare/v1.7.0...v1.7.1) (2026-09-21)
+
+
+### Bug Fixes
+
+* filter out null policy ([ba62121](https://github.com/data-platform-hq/terraform-azurerm-key-vault/commit/ba621216dcd314f3d30404acea35d38e4f9e706c))
+
 # [1.7.0](https://github.com/data-platform-hq/terraform-azurerm-key-vault/compare/v1.6.0...v1.7.0) (2026-02-02)
 
 
